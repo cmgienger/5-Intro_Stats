@@ -49,5 +49,9 @@ ggplot(ozone, aes(x = Ozone)) +
   facet_wrap(~ Garden.location, ncol = 1) +
   theme_bw()
 
+ggplot(ozone, aes(x = Garden.location, y = Ozone, color = Garden.location)) +
+  geom_point(size=3) +
+  theme_bw()
+
 # Do a t.test now....
 t.test(Ozone ~ Garden.location, data = ozone)
