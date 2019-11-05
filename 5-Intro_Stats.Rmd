@@ -13,9 +13,12 @@ library(dplyr)
 library(ggplot2)
 library(emmeans)
 ```
-#Note error between GardenOzone.csv and ozone.csv input files
-#Known issue
+
+Note error between GardenOzone.csv and ozone.csv input files
+Known issue
+
 ```{r}
+#import data
 lady <- read.csv("ladybirds_morph_colour.csv")
 ```
 
