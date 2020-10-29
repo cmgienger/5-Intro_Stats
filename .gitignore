@@ -3,4 +3,5 @@
 .RData
 .Ruserdata
 .xlsx
-Homework_dplyr_ggplot.R
+.DS_Store
+/homework_code
