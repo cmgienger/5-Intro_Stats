@@ -1,0 +1,60 @@
+---
+title: "5-Homework Using `dplyr` and `ggplot2`"
+subtitle: BIOL 5000
+output:
+  pdf_document: default #prevents ability to download .rmd file in html notebook
+  html_document: default # don't use for distribution; tibble is truncated in html view
+  code_download: FALSE
+---
+You will need these libraries:
+```{r message=FALSE, warning=FALSE}
+library(ggplot2)
+library(dplyr)
+```
+<br />
+You will need this data:
+```{r}
+data(msleep)
+```
+<br />
+<br />
+**Question 1**. Use `dplyr` to recreate the summary table below using the `msleep` dataset (built into ggplot). You will need to use several of the `dplyr` verbs (functions) we have learned in class.
+<br />
+<br />
+```{r echo=FALSE}
+data_summary <- msleep %>% filter(order == "Rodentia" | order == "Carnivora") %>%
+  filter(brainwt>0) %>%
+  select(name, order, brainwt, bodywt) %>%
+  mutate(ratio=brainwt/bodywt) %>%
+  arrange(desc(bodywt))
+data_summary
+```
+<br />
+<br />
+**Question 2**. Use a t-test to compare the two mammal orders, Rodentia and Carnivora, in their ratio of brain weight to body weight.
+<br />
+<br />
+```{r eval=FALSE, include=FALSE}
+t.test(data=data_summary, ratio~order)
+```
+<br />
+**Question 3**. Using `ggplot2`, replicate the following figure. Fill in the values from your t-test (Question 2).
+```{r echo=FALSE}
+ggplot(data_summary, aes(x = order, y = ratio)) +
+  geom_boxplot() +
+  geom_point(size = 4, color = 'red', alpha = 0.5) +
+  labs(x = "Mammalian Order", y = "Ratio of Brain Weight to Body Weight")+
+  annotate("text", x = 1.5, y = 0.035, label = "t = ?, df = ?, P = ?")
+```
+**Question 4**. Save the plot to your Rproject folder for this exercise as a 6" X 6" .jpg file.
+```{r eval=FALSE, include=FALSE}
+ggsave("CoolMammalPlot.jpg", width = 6, height = 6)
+```
+
+
+Homework (folder containing .rproj file and all associated input/output files) is due to the D2L Assignments dropbox **before class on November 4th**.
+<br />
+<br />
+<br />
+As before, make each of your 'answers' an object. (e.g.)
+Answer_3 <- ggplot(data_summary, aes(x = ........ and 'print' the name of the object below the specified code (e.g. Answer_3). Each object is then displayed automatically in the console (if a model or table) or plot viewer (if its a graph) without having to click on anything. 
