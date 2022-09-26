@@ -20,14 +20,12 @@ totals <- lady %>%
 
 View(totals)
 
-ggplot(totals, aes(x = Habitat, y = total.number,
-                   fill = morph_colour)) +
+ggplot(totals, aes(x = Habitat, y = total.number, fill = morph_colour)) +
   geom_bar(stat = 'identity', position = 'dodge')
 
 
 #Change the bar colors
-ggplot(totals, aes(x = Habitat, y = total.number,
-                   fill = morph_colour)) +
+ggplot(totals, aes(x = Habitat, y = total.number, fill = morph_colour)) +
   geom_bar(stat = 'identity', position = 'dodge') +
   scale_fill_manual(values = c(black = "black", red = "red"))
 
