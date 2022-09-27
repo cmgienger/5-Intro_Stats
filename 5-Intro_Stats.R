@@ -5,7 +5,6 @@
 
 library(dplyr)
 library(ggplot2)
-library(emmeans)
 
 lady <- read.csv("ladybirds_morph_colour.csv")
 
