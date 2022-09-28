@@ -4,6 +4,7 @@
 #Known issue
 
 library(dplyr)
+library(tidyr)
 library(ggplot2)
 
 lady <- read.csv("ladybirds_morph_colour.csv")

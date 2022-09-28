@@ -1,8 +1,8 @@
 ---
 title: "5-Homework Using `dplyr` and `ggplot2`"
-subtitle: BIOL 5000
+subtitle: Conducting a t-test to compare two independent groups.
 output:
-  pdf_document: default #prevents ability to download .rmd file in html notebook
+  #pdf_document: default #prevents ability to download .rmd file in html notebook
   html_document: default # don't use for distribution; tibble is truncated in html view
   code_download: FALSE
 ---
@@ -10,6 +10,7 @@ You will need these libraries:
 ```{r message=FALSE, warning=FALSE}
 library(ggplot2)
 library(dplyr)
+library(tidyr)
 ```
 <br />
 You will need this data:
@@ -18,7 +19,7 @@ data(msleep)
 ```
 <br />
 <br />
-**Question 1**. Use `dplyr` to recreate the summary table below using the `msleep` dataset (built into ggplot). You will need to use several of the `dplyr` verbs (functions) we have learned in class.
+**Question 1**. Use `dplyr` to recreate the summary table below using the `msleep` dataset (built into ggplot). You will need to use several of the `dplyr` verbs (functions) we have learned in class. Your full table should have 17 rows (although fewer rows may be displayed by default).
 <br />
 <br />
 ```{r echo=FALSE}
@@ -32,6 +33,7 @@ data_summary
 <br />
 <br />
 **Question 2**. Use a t-test to compare the two mammal orders, Rodentia and Carnivora, in their ratio of brain weight to body weight.
+Format your answer as you would see in the results section of a scientific journal article. 
 <br />
 <br />
 ```{r eval=FALSE, include=FALSE}
@@ -46,13 +48,14 @@ ggplot(data_summary, aes(x = order, y = ratio)) +
   labs(x = "Mammalian Order", y = "Ratio of Brain Weight to Body Weight")+
   annotate("text", x = 1.5, y = 0.035, label = "t = ?, df = ?, P = ?")
 ```
+<br />
+<br />
 **Question 4**. Save the plot to your Rproject folder for this exercise as a 6" X 6" .jpg file.
 ```{r eval=FALSE, include=FALSE}
 ggsave("CoolMammalPlot.jpg", width = 6, height = 6)
 ```
 
-
-Homework (folder containing .rproj file and all associated input/output files) is due to the D2L Assignments dropbox **before class on November 2nd**.
+Homework (folder containing .rproj file and all associated input/output files) is due to the D2L Assignments dropbox **before class one week from today**.
 <br />
 <br />
 <br />
