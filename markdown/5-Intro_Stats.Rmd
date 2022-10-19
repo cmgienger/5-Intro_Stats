@@ -3,7 +3,7 @@ title: "5-Intro_Stats"
 author: "CM Gienger"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  html_notebook:
+  html_document:
     df_print: paged
 ---
 

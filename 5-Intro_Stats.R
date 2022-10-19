@@ -53,3 +53,15 @@ ggplot(ozone, aes(x = Garden.location, y = Ozone, color = Garden.location)) +
 
 # Do a t.test now....
 t.test(Ozone ~ Garden.location, data = ozone)
+
+#geom_dotplot
+ggplot(ozone, aes(x = Ozone)) +
+  geom_dotplot(method="histodot", binwidth = 5)+
+  facet_wrap(~ Garden.location, ncol = 1) +
+  theme_bw()
+
+ggplot(ozone, aes(x=Garden.location, y=Ozone)) +
+  geom_dotplot(binaxis = "y", stackdir = "center", binwidth=2) +
+  theme_bw()
+
+
