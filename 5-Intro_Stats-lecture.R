@@ -36,6 +36,10 @@ lady.mat <- xtabs(number ~ Habitat + morph_colour,
                   data = lady)
 lady.mat
 
+lady.mat2 <- xtabs(total.number ~ Habitat + morph_colour,
+                   data = totals)
+lady.mat2
+
 chisq.test(lady.mat)
 
 #Two-sample t-test
