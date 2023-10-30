@@ -32,9 +32,12 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-
 assignment_code 
 #move assigned homework out of this file /assignment_code
 
 markdown
 #markdown file
+
+5-Intro_Stats.qmd
+5-Intro_Stats.html
+5-Intro_Stats_files
