@@ -42,6 +42,18 @@ lady.mat2
 
 chisq.test(lady.mat)
 
+#Arthritis Example
+# install.packages("vcd") #source of Arthritis data
+library(vcd)
+?Arthritis	# tell me about the dataset
+str(Arthritis)	 #format of dataset
+
+ggplot(Arthritis, aes(Treatment, fill = Improved)) + 	geom_bar() + 
+  labs(fill = "Improvement") # better legend title
+
+chisq.test(Arthritis$Treatment, Arthritis$Improved)
+
+
 #Two-sample t-test
 ozone <- read.csv("ozone.csv")
 glimpse(ozone)
